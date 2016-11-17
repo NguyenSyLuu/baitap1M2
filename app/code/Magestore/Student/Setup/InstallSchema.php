@@ -20,25 +20,38 @@ class InstallSchema implements InstallSchemaInterface
 
         $installer->startSetup();
 
-        $installer->getConnection()->dropTable($installer->getTable('magestore_student_student'));
+        $installer->getConnection()->dropTable($installer->getTable('magestore_student'));
 
         /**
-         * Create table 'magestore_student_student'
+         * Create table 'magestore_student'
          */
         $table = $installer->getConnection()
-            ->newTable($installer->getTable('magestore_student_student'))
+            ->newTable($installer->getTable('magestore_student'))
             ->addColumn(
-                'entity_id',
+                'id',
                 \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
                 null,
                 ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true],
-                'test entity id'
+                'test id'
             )->addColumn(
                 'name',
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 32,
                 ['nullable' => false],
                 'Column name'
+            )->addColumn(
+                'class',
+                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                32,
+                ['nullable' => false],
+                'Class name'
+
+            )->addColumn(
+                'university',
+                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                32,
+                ['nullable' => false],
+                'university name'
             )->addColumn(
                 'status',
                 \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,

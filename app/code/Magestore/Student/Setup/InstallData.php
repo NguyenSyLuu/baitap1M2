@@ -35,7 +35,7 @@ class InstallData implements InstallDataInterface
 
         $columns = ['name'];
         $setup->getConnection()->insertArray(
-            $setup->getTable('magestore_student_student'),
+            $setup->getTable('magestore_student'),
             $columns,
             $data
         );
