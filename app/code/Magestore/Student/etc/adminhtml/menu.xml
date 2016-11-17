@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+  <menu>
+    <add id="Magestore_Student::magestorestudent" title="STUDENT" resource="Magestore_Student::magestorestudent" module="Magestore_Student" sortOrder="20"/>
+    <add id="Magestore_Student::managestudent" title="Manage Student" resource="Magestore_Student::managestudent" parent="Magestore_Student::magestorestudent" action="magestorestudentadmin/student" module="Magestore_Student" sortOrder="20"/>
+  </menu>
+</config>
