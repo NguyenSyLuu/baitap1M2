@@ -30,7 +30,7 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
     {
         parent::_construct();
         $this->setId('Grid');
-        $this->setDefaultSort('entity_id');
+        $this->setDefaultSort('student_id');
         $this->setDefaultDir('ASC');
         $this->setSaveParametersInSession(true);
         $this->setUseAjax(true);
@@ -53,10 +53,10 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
     protected function _prepareColumns()
     {
         $this->addColumn(
-            'entity_id',
+            'student_id',
             [
                 'header'           => __('ID'),
-                'index'            => 'entity_id',
+                'index'            => 'student_id',
                 'type'             => 'number',
                 'header_css_class' => 'col-id',
                 'column_css_class' => 'col-id',
@@ -93,12 +93,12 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
                     [
                     'caption' => __('Edit'),
                     'url'     => ['base' => '*/*/edit'],
-                    'field'   => 'entity_id',
+                    'field'   => 'student_id',
                     ],
                 ],
                 'filter'           => FALSE,
                 'sortable'         => FALSE,
-                'index'            => 'entity_id',
+                'index'            => 'student_id',
                 'header_css_class' => 'col-action',
                 'column_css_class' => 'col-action',
             ]
@@ -116,7 +116,7 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
      */
     protected function _prepareMassaction()
     {
-        $this->setMassactionIdField('entity_id');
+        $this->setMassactionIdField('student_id');
         $this->getMassactionBlock()->setFormFieldName('students');
 
         $this->getMassactionBlock()->addItem(
@@ -164,6 +164,6 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
      */
     public function getRowUrl($row)
     {
-        return $this->getUrl('*/*/edit', ['entity_id' => $row->getId()]);
+        return $this->getUrl('*/*/edit', ['student_id' => $row->getId()]);
     }
 }

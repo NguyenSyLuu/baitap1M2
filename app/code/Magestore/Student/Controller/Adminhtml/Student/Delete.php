@@ -14,7 +14,7 @@ class Delete extends \Magestore\Student\Controller\Adminhtml\Student
      */
     public function execute()
     {
-        $id = $this->getRequest()->getParam('entity_id');
+        $id = $this->getRequest()->getParam('student_id');
         try {
             /** @var \{{model_name}} $model */
             $model = $this->_objectManager->create('Magestore\Student\Model\Student')->setId($id);

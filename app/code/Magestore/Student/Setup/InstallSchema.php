@@ -28,7 +28,7 @@ class InstallSchema implements InstallSchemaInterface
         $table = $installer->getConnection()
             ->newTable($installer->getTable('magestore_student'))
             ->addColumn(
-                'id',
+                'student_id',
                 \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
                 null,
                 ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true],

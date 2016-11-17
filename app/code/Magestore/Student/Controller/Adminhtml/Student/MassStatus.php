@@ -14,15 +14,15 @@ class MassStatus extends \Magestore\Student\Controller\Adminhtml\Student
      */
     public function execute()
     {
-        $entityIds = $this->getRequest()->getParam('students');
+        $studentIds = $this->getRequest()->getParam('students');
         $status = $this->getRequest()->getParam('status');
 
-        if (!is_array($entityIds) || empty($entityIds)) {
+        if (!is_array($studentIds) || empty($studentIds)) {
             $this->messageManager->addError(__('Please select record(s).'));
         } else {
             /** @var \Magestore\Student\Model\ResourceModel\Student\Collection $collection */
             $collection = $this->_objectManager->create('Magestore\Student\Model\ResourceModel\Student\Collection');
-            $collection->addFieldToFilter('entity_id', ['in' => $entityIds]);
+            $collection->addFieldToFilter('student_id', ['in' => $studentIds]);
             try {
                 foreach ($collection as $item) {
                     $item->setStatus($status)
@@ -30,7 +30,7 @@ class MassStatus extends \Magestore\Student\Controller\Adminhtml\Student
                         ->save();
                 }
                 $this->messageManager->addSuccess(
-                    __('A total of %1 record(s) have been changed status.', count($entityIds))
+                    __('A total of %1 record(s) have been changed status.', count($studentIds))
                 );
             } catch (\Exception $e) {
                 $this->messageManager->addError($e->getMessage());

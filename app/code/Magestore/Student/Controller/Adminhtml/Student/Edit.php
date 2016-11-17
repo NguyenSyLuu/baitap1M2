@@ -14,7 +14,7 @@ class Edit extends \Magestore\Student\Controller\Adminhtml\Student
      */
     public function execute()
     {
-        $id = $this->getRequest()->getParam('entity_id');
+        $id = $this->getRequest()->getParam('student_id');
         $model = $this->_objectManager->create('Magestore\Student\Model\Student');
 
         if ($id) {

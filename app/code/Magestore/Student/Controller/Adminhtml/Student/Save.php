@@ -20,7 +20,7 @@ class Save extends \Magestore\Student\Controller\Adminhtml\Student
             /** @var \Magestore\Student\Model\Student $model */
             $model = $this->_objectManager->create('Magestore\Student\Model\Student');
 
-            if ($id = $this->getRequest()->getParam('entity_id')) {
+            if ($id = $this->getRequest()->getParam('student_id')) {
                 $model->load($id);
             }
 
@@ -36,7 +36,7 @@ class Save extends \Magestore\Student\Controller\Adminhtml\Student
                     return $resultRedirect->setPath(
                         '*/*/edit',
                         [
-                            'entity_id' => $model->getId(),
+                            'student_id' => $model->getId(),
                             '_current' => true,
                         ]
                     );
@@ -57,7 +57,7 @@ class Save extends \Magestore\Student\Controller\Adminhtml\Student
 
             return $resultRedirect->setPath(
                 '*/*/edit',
-                ['entity_id' => $this->getRequest()->getParam('entity_id')]
+                ['student_id' => $this->getRequest()->getParam('student_id')]
             );
         }
 

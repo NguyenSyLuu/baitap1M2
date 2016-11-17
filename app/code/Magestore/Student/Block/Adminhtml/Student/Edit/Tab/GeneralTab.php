@@ -83,7 +83,7 @@ class GeneralTab extends \Magento\Backend\Block\Widget\Form\Generic implements T
         $fieldset = $form->addFieldset('general_fieldset', ['legend' => __('General Information')]);
 
         if ($model->getId()) {
-            $fieldset->addField('entity_id', 'hidden', ['name' => 'entity_id']);
+            $fieldset->addField('student_id', 'hidden', ['name' => 'student_id']);
         }
 
         $fieldset->addField(

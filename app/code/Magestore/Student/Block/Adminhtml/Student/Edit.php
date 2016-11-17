@@ -12,7 +12,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
      */
     protected function _construct()
     {
-        $this->_objectId = 'entity_id';
+        $this->_objectId = 'student_id';
         $this->_blockGroup = 'Magestore_Student';
         $this->_controller = 'adminhtml_student';
 
